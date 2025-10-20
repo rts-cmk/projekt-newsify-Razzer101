@@ -4,12 +4,16 @@ import Login from "../components/Login"
 import Header from "../components/Header"
 import Searchbar from "../components/Searchbar"
 import Nav from "../components/Nav"
+import { useState } from "react"
 
 export default function Home(){
+
+    const [triggerTutorial, setTriggerTutorial] = useState(false)
+
     return(
         <>
-        <StartupLogo/>
-        <Tutorial/>
+        <StartupLogo tutorialTrigger= {setTriggerTutorial}/>
+        <Tutorial tutorialTrigger={triggerTutorial}/>
         <Login/>
         <Header/>
         <Searchbar/>
