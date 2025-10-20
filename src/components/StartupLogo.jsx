@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import gsap from "gsap"
 
-export default function StartupLogo({ tutorialTrigger }){
+export default function StartupLogo(){
 
     
     const section = useRef()
@@ -20,7 +20,6 @@ export default function StartupLogo({ tutorialTrigger }){
         .to(section.current, {
             opacity: 0,
             display: "none",
-            onComplete: () => tutorialTrigger(true)
         })
     }
 
@@ -43,7 +42,7 @@ export default function StartupLogo({ tutorialTrigger }){
 
     return(
         <section ref={section} className="startup-logo-section">
-            <img ref={img} className="startup-logo-section__img" src="newsify_logo.png" alt="Newsify logo" />
+            <img ref={img} className="startup-logo-section__img" src="newsifyLogo.png" alt="Newsify logo" />
             <h1 ref={h1} className="startup-logo-section__h1">Newsify</h1>
         </section>
     )

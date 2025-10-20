@@ -8,6 +8,10 @@
     flex-direction: column
     justify-content: center
     background-color: #ffffff
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 3
 
     &__img
         width: 5em
@@ -21,3 +25,26 @@
         font-size: 3em
         font-family: var.$playfair-font
 /* #endregion */
+
+.tutorial-section
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    width: 100%
+
+.slider
+    width: 100%
+
+    &__figure
+        margin: 0
+        flex-direction: column
+
+        &--block
+            display: flex
+        &--none
+            display: none
+    
+    &__img
+        height: 40vh
+        margin: 0 auto
