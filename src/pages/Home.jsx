@@ -17,8 +17,13 @@ export default function Home(){
         <Searchbar/>
         <section className="news-section">
             <News category="health" title="health"/>
-            {/* <News category="sports" title="Sport"/> */}
+            <News category="sports" title="Sport"/>
             <News category="travel" title="Travel"/>
+            {/* <News category="movies" title="movies"/>
+            <News category="politics" title="politics"/>
+            <News category="science" title="science"/>
+            <News category="technology" title="technology"/>
+            <News category="world" title="world"/> */}
         </section>
         <Nav/>
         </>

@@ -1,8 +1,18 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Login(){
 
     const [loginDisplay, setLoginDisplay] = useState("block")
+    
+    useEffect(() => {
+        if(localStorage.getItem("loginTrigger")){
+            setLoginDisplay("none");
+            localStorage.setItem("loginTrigger", false);
+        } else{
+            setLoginDisplay("block");
+            localStorage.setItem("loginTrigger", true);
+        }
+    },[])
 
     return(
         <>
