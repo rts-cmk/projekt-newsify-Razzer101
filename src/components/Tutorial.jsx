@@ -6,15 +6,15 @@ export default function Tutorial(){
     const [tutorialDisplay, setTutorialDisplay] = useState("block")
     const [slideDisplay, setSlideDisplay] = useState(1)
 
-    // useEffect(() => {
-    //     if(localStorage.getItem("tutorialTrigger")){
-    //         setTutorialDisplay("none");
-    //         localStorage.setItem("tutorialTrigger", false);
-    //     } else{
-    //         setTutorialDisplay("block");
-    //         localStorage.setItem("tutorialTrigger", true);
-    //     }
-    // },[])
+    useEffect(() => {
+        if(localStorage.getItem("tutorialTrigger")){
+            setTutorialDisplay("none");
+            localStorage.setItem("tutorialTrigger", false);
+        } else{
+            setTutorialDisplay("block");
+            localStorage.setItem("tutorialTrigger", true);
+        }
+    },[])
 
     return(
         <section className="tutorial-section" style={{display: tutorialDisplay}}>

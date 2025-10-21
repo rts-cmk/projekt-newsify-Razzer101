@@ -1,17 +1,17 @@
 @use "variables" as var
 
-/* #region startup logo */
+/* #region Startup logo */
 .startup-logo-section
     width: 100%
     height: 100vh
     display: flex
     flex-direction: column
     justify-content: center
-    background-color: #ffffff
+    background-color: white
     position: absolute
     top: 0
     left: 0
-    z-index: 3
+    z-index: 4
 
     &__img
         width: 5em
@@ -26,16 +26,19 @@
         font-weight: 800
 /* #endregion */
 
+/* #region Tutorial */
 .tutorial-section
     position: absolute
     top: 0
     left: 0
-    z-index: 2
+    z-index: 3
     width: 100%
-    padding-top: 2em
+    height: 100vh
+    background-color: white
 
 .slider
     width: 100%
+    margin-top: 3vh
 
     &__figure
         margin: 0
@@ -45,7 +48,7 @@
             display: flex
         &--none
             display: none
-    
+
     &__img
         width: 100%
         aspect-ratio: 1/1.05
@@ -55,7 +58,7 @@
         text-align: center
         padding: 0 2em
         margin-bottom: 3em
-        
+
         h1
             font-size: 2.2em
             font-weight: 800
@@ -64,7 +67,6 @@
 
         p
             font-size: 1.2em
-            font-family: var.$open-sans-font
             margin: 0
 
 .slider-dots
@@ -86,21 +88,131 @@
     padding: 0 1em
 
     button
-        font-family: var.$open-sans-font
         font-weight: 500
         font-size: 1em
         width: 45%
 
     &__skip
-        border: 1.5px solid var.$tutorial-color
+        border: 1.5px solid var.$newsify-green
         border-radius: 30px
         background-color: transparent
-        color: var.$tutorial-color
+        color: var.$newsify-green
         padding: 1em 0
 
     &__continue
         border: none
         border-radius: 30px
-        background-color: var.$tutorial-color
+        background-color: var.$newsify-green
         color: white
         padding: 1em 0
+
+/* #endregion */
+
+/* #region Login */
+.login-section
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    width: 100%
+    height: 100vh
+    background-color: white
+    text-align: center
+
+    &__p
+        font-size: 1.1em
+        margin-top: 0
+        margin-bottom: 3em
+        padding: 0 10px
+
+    &__sign-in
+        padding: 1.2em 0
+        font-weight: 500
+        background-color: var.$newsify-green
+        border: 1px solid var.$dark-border
+        border-radius: 30px
+        font-size: 1em
+        width: 85%
+        color: white
+        margin-bottom: 2em
+
+.login-logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 8vh 0 3em 0
+
+    &__img
+        width: 20%
+
+    &__h1
+        font-weight: 900
+        font-size: 2.2em
+        margin-top: 10px
+        margin-bottom: 0
+
+.login-btns
+    display: flex
+    flex-direction: column
+    padding: 0 30px
+    margin-bottom: 3em
+
+    button
+        padding: 1.2em 0
+        font-weight: 500
+        background-color: transparent
+        border: 1px solid var.$dark-border
+        border-radius: 30px
+        font-size: 1em
+
+    &__facebook
+        margin-bottom: 15px
+
+.or-separator
+    display: flex
+    padding: 0 20px
+    align-items: center
+    margin-bottom: 3em
+
+    &__line
+        width: 40%
+        height: 2px
+        background-color: var.$dark-border
+
+    &__p
+        width: 20%
+
+.sign-up
+    display: flex
+    justify-content: center
+
+    &__p
+        margin: 0
+        margin-right: 10px
+
+    &__btn
+        background-color: transparent
+        border: none
+        font-size: 1em
+        color: var.$newsify-green
+        padding: 0
+/* #endregion */
+
+/* #region Header */
+.header-section
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 1.5em
+    margin-bottom: 2em
+
+    &__img
+        width: 20px
+        margin-right: 10px
+
+    &__h1
+        margin: 0
+        font-size: 1.5em
+        font-weight: 900
+/* #endregion */
+
