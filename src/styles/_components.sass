@@ -220,7 +220,7 @@
 .searchbar
     display: flex
     justify-content: center
-    padding: 0 25px
+    padding: 0 25px 1.5em 25px
 
     &__input
         width: 100%
@@ -230,3 +230,76 @@
         background-color: #f0f0f0
         border-radius: 5px
 /* #endregion */
+
+.news-section
+    .news-category
+        &:last-child
+            border-bottom: 2px solid var.$dark-border
+    
+.news-category
+    display: flex
+    flex-direction: column
+
+    &__btn
+        background-color: transparent
+        display: flex
+        border: none
+        border-top: 2px solid var.$dark-border
+        padding: 1em 2em
+
+        img
+            width: 4%
+            margin-right: 10px
+        
+        h2
+            font-size: 1.4em
+            font-weight: 800
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            text-align: start
+        
+        div
+            width: 5%
+            font-size: 3em
+            margin: 0
+            line-height: 10px
+
+.news-display
+    padding: 0
+    overflow: hidden
+    height: 0
+
+.news-box
+    display: flex
+    padding: 1em 1.5em 1em 1.5em
+    text-decoration: none
+    color: black
+    border-bottom: 1px solid var.$dark-border
+
+    &:first-child
+        border-top: 2px solid var.$dark-border
+    
+    &:last-child
+        border-bottom: none
+        padding-bottom: 0
+
+    &__img
+        width: 20%
+        height: 20%
+        border-radius: 10px
+        margin-right: 20px
+    
+    &__article
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        h3
+            margin-top: 0
+            margin-bottom: 3px
+        
+        p
+            margin: 0
+            font-size: 0.9em
