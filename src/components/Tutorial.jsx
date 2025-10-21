@@ -42,14 +42,14 @@ export default function Tutorial(){
                 </figure>
             </div>
             <div className="slider-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span className="slider-dots__span"></span>
+                <span className="slider-dots__span"></span>
+                <span className="slider-dots__span"></span>
+                <span className="slider-dots__span"></span>
             </div>
             <div className="slider-btns">
-                <button className="slider-btns__skip">Skip</button>
-                <button onClick={() => {slideDisplay === 3 ? setSlideDisplay(1) : setSlideDisplay(slideDisplay + 1)}} className="slider-btns__continue">Continue</button>
+                <button onClick={() => {setTutorialDisplay("none")}} className="slider-btns__skip">Skip</button>
+                <button onClick={() => {slideDisplay === 3 ? setTutorialDisplay("none") : setSlideDisplay(slideDisplay + 1)}} className="slider-btns__continue">Continue</button>
             </div>
         </section>
     )

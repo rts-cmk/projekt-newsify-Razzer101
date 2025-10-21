@@ -23,7 +23,7 @@
         text-align: center
         opacity: 0
         font-size: 3em
-        font-family: var.$playfair-font
+        font-weight: 800
 /* #endregion */
 
 .tutorial-section
@@ -32,6 +32,7 @@
     left: 0
     z-index: 2
     width: 100%
+    padding-top: 2em
 
 .slider
     width: 100%
@@ -46,5 +47,60 @@
             display: none
     
     &__img
-        height: 40vh
-        margin: 0 auto
+        width: 100%
+        aspect-ratio: 1/1.05
+        margin-bottom: .8em
+
+    &__figcaption
+        text-align: center
+        padding: 0 2em
+        margin-bottom: 3em
+        
+        h1
+            font-size: 2.2em
+            font-weight: 800
+            margin-top: 0
+            margin-bottom: .5em
+
+        p
+            font-size: 1.2em
+            font-family: var.$open-sans-font
+            margin: 0
+
+.slider-dots
+    display: flex
+    justify-content: center
+    margin-bottom: 3em
+
+    &__span
+        width: 14px
+        height: 14px
+        background-color: #00000047
+        border-radius: 50%
+        margin: 0 5px
+
+.slider-btns
+    text-align: center
+    display: flex
+    justify-content: space-between
+    padding: 0 1em
+
+    button
+        font-family: var.$open-sans-font
+        font-weight: 500
+        font-size: 1em
+        width: 45%
+
+    &__skip
+        border: 1.5px solid var.$tutorial-color
+        border-radius: 30px
+        background-color: transparent
+        color: var.$tutorial-color
+        padding: 1em 0
+
+    &__continue
+        border: none
+        border-radius: 30px
+        background-color: var.$tutorial-color
+        color: white
+        padding: 1em 0
