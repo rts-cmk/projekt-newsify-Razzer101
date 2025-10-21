@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { TbHome, TbBookmark, TbStar, TbSettings } from "react-icons/tb";
 
 export default function Nav(){
     return(
