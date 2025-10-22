@@ -231,15 +231,13 @@
 /* #endregion */
 
 /* #region News */
-.news-section
-    .news-category
-        &:last-child
-            border-bottom: 2px solid var.$dark-border
-            margin-bottom: 5em
-
 .news-category
     display: flex
     flex-direction: column
+
+    &:last-child
+        border-bottom: 2px solid var.$dark-border
+        margin-bottom: 5em
 
     &__btn
         background-color: transparent
@@ -249,7 +247,7 @@
         padding: 1em 2em
 
         img
-            width: 4%
+            width: 20px
             margin-right: 10px
 
         h2
@@ -264,7 +262,7 @@
             width: 5%
             font-size: 3em
             margin: 0
-            line-height: 10px
+            line-height: 20px
 
 .news-display
     padding: 0
@@ -305,6 +303,44 @@
             font-size: 0.9em
 /* #endregion */
 
+.settings-category
+    display: flex
+    padding: 1.2em 1.5em
+    border-top: 1px solid var.$dark-border
+    align-items: center
+
+    &:last-of-type
+        border-bottom: 1px solid var.$dark-border
+        margin-bottom: 2em
+
+    &__img
+        width: 20px
+        margin-right: 10px
+    
+    &__h4
+        font-size: 1.1em
+        font-weight: 800
+        margin: 0
+        text-transform: uppercase
+        width: 100%
+        text-align: start
+    
+.Setting-toggle
+    width: 80px
+    background-color: var.$newsify-green
+    border: none
+    padding: 2px
+    border-radius: 20px
+    display: flex
+    
+    &__div
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background-color: white
+
+
+/* #region Nav */
 .nav-section
     width: 100%
     position: fixed
@@ -320,7 +356,7 @@
     padding: 0
     margin: 0
     list-style: none
-    
+
     &__li
         a
             text-decoration: none
@@ -335,3 +371,4 @@
             p
                 margin: 0
                 font-size: 0.8em
+/* #endregion */
