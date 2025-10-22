@@ -63,9 +63,9 @@ export default function PopularNews({ category, title }){
                     popularNewsData !== null &&
                         popularNewsData.map((elm) => {
                             return (
-                                <a key={elm.uri} className="news-box" href={elm.url}>
-                                    <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
-                                    <article className="news-box__article">
+                                <a key={elm.uri} className="popular-news-box" href={elm.url}>
+                                    <img className="popular-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
+                                    <article className="popular-news-box__article">
                                         <h3>{elm.title.slice(0, 25)}...</h3>
                                         <p>{elm.abstract.slice(0, 60)}...</p>
                                     </article>

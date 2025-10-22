@@ -268,12 +268,18 @@
     overflow: scroll
     white-space: nowrap
     scroll-snap-type: x mandatory
+    border-bottom: 1px solid var.$dark-border
+
+    &:first-child
+        border-top: 1px solid var.$dark-border
+
+    &:last-child
+        border-bottom: none
 
     &__save-btn
         border: none
         font-size: 2em
         padding: 0 1.3em
-        border-top: 2px solid var.$dark-border
         background-color: #46781B
         color: white
         scroll-snap-stop: always
@@ -283,7 +289,7 @@
         display: none
 
 
-.news-box
+.news-box, .popular-news-box
     display: flex
     width: 100vw
     padding: 1em 1.5em 1em 1.5em
@@ -291,12 +297,6 @@
     color: black
     scroll-snap-stop: always
     scroll-snap-align: start
-
-    &:first-child
-        border-top: 2px solid var.$dark-border
-
-    &:last-child
-        border-bottom: none
 
     &__img
         width: 4.8em
@@ -318,6 +318,15 @@
         p
             margin: 0
             font-size: 3.4vw
+
+.popular-news-box
+    border-bottom: 1px solid var.$dark-border
+
+    &:first-child
+        border-top: 1px solid var.$dark-border
+
+    &:last-child
+        border-bottom: none
 /* #endregion */
 
 /* #region settings */
