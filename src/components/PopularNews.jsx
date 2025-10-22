@@ -52,8 +52,8 @@ export default function PopularNews({ category, title }){
         return
     } else{
         return(
-            <div className="news-category">
-                <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="news-category__btn">
+            <>
+                <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="popular-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>
                     <div ref={arrow}>&#8250;</div>
@@ -74,7 +74,7 @@ export default function PopularNews({ category, title }){
                         })
                     }
                 </div>
-            </div>
+            </>
         )
     }
     
