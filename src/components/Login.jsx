@@ -1,22 +1,12 @@
-import { useState, useEffect } from "react"
+import { useNavigate } from "react-router"
 
 export default function Login(){
 
-    const [loginDisplay, setLoginDisplay] = useState("block")
-    
-    useEffect(() => {
-        if(localStorage.getItem("loginTrigger")){
-            setLoginDisplay("none");
-            localStorage.setItem("loginTrigger", false);
-        } else{
-            setLoginDisplay("block");
-            localStorage.setItem("loginTrigger", true);
-        }
-    },[])
+    const navigateHome = useNavigate()
 
     return(
         <>
-            <section className="login-section" style={{display: loginDisplay}}>
+            <section className="login-section">
                 <figure className="login-logo">
                     <img className="login-logo__img" src="newsifyLogo.png" alt="Newsify logo" />
                     <h1 className="login-logo__h1">Newsify</h1>
@@ -31,7 +21,7 @@ export default function Login(){
                     <p className="or-separator__p">or</p>
                     <span className="or-separator__line"></span>
                 </div>
-                <button className="login-section__sign-in" onClick={() => setLoginDisplay("none")}>Sign in with password</button>
+                <button className="login-section__sign-in" onClick={() => navigateHome("/home")}>Sign in with password</button>
                 <div className="sign-up">
                     <p className="sign-up__p">Don't have an account?</p>
                     <button className="sign-up__btn">Sign up</button>
