@@ -232,7 +232,7 @@
 /* #endregion */
 
 /* #region News */
-.news-section__btn, .popular-section__btn
+.news-section__btn, .popular-section__btn, .archive-section__btn
     width: 100%
     background-color: transparent
     display: flex
@@ -269,6 +269,8 @@
     white-space: nowrap
     scroll-snap-type: x mandatory
     border-bottom: 1px solid var.$dark-border
+    -ms-overflow-style: none
+    scrollbar-width: none
 
     &:first-child
         border-top: 1px solid var.$dark-border
@@ -276,11 +278,10 @@
     &:last-child
         border-bottom: none
 
-    &__save-btn
+    &__btn
         border: none
         font-size: 2em
-        padding: 0 1.3em
-        background-color: #46781B
+        padding: 0 1.2em
         color: white
         scroll-snap-stop: always
         scroll-snap-align: end
