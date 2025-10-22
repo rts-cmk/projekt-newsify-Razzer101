@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
+import { TbBookmark } from "react-icons/tb"
 
 export default function News({ category, title }){
 
@@ -20,7 +21,6 @@ export default function News({ category, title }){
                 const data = await response.json()
                     setNewsData(data.results.slice(0, 5))
                     console.log(data.results.slice(0, 5)) 
-
             }
 
             fetchData()
@@ -65,14 +65,15 @@ export default function News({ category, title }){
                     newsData !== null &&
                         newsData.map((elm) => {
                             return (
-                                <div key={elm.uri}>
-                                <a className="news-box" href={elm.url}>
-                                    <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
-                                    <article className="news-box__article">
-                                        <h3>{elm.title.slice(0, 25)}...</h3>
-                                        <p>{elm.abstract.slice(0, 60)}...</p>
-                                    </article>
-                                </a>
+                                <div key={elm.uri} className="news-box-section">
+                                    <a className="news-box" href={elm.url}>
+                                        <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
+                                        <article className="news-box__article">
+                                            <h3>{elm.title.slice(0, 25)}...</h3>
+                                            <p>{elm.abstract.slice(0, 60)}...</p>
+                                        </article>
+                                    </a>
+                                    <button className="news-box-section__save-btn"><TbBookmark/></button>
                                 </div>
                             )
                         })
