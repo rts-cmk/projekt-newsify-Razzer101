@@ -6,7 +6,7 @@ export default function Archive(){
         <>
             <Header/>
             <section className="archive-section"></section>
-            <Nav/>
+            <Nav archive="#4D861F"/>
         </>
     )
 }

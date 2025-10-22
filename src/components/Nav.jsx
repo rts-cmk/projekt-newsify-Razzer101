@@ -1,21 +1,33 @@
 import { Link } from "react-router";
 import { TbHome, TbBookmark, TbStar, TbSettings } from "react-icons/tb";
 
-export default function Nav(){
+export default function Nav({ home = "black", archive = "black", popular = "black", settings = "black" }){
     return(
         <nav className="nav-section">
-            <ul className="nav-section__ul">
-                <li>
-                    <Link to="/">Home</Link>
+            <ul className="nav-ul">
+                <li className="nav-ul__li">
+                    <Link to="/" style={{color: home}}>
+                    <TbHome/>
+                    <p>Home</p>
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/archive">Archive</Link>
+                <li className="nav-ul__li">
+                    <Link to="/archive" style={{color: archive}}>
+                    <TbBookmark/>
+                    <p>Archive</p>
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/popular">Popular</Link>
+                <li className="nav-ul__li">
+                    <Link to="/popular" style={{color: popular}}>
+                    <TbStar/>
+                    <p>Popular</p>
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/settings">Settings</Link>
+                <li className="nav-ul__li">
+                    <Link to="/settings" style={{color: settings}}>
+                    <TbSettings/>
+                    <p>Settings</p>
+                    </Link>
                 </li>
             </ul>
         </nav>

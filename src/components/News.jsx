@@ -28,7 +28,6 @@ export default function News({ category, title }){
     const handleOpenClick = () => {
         gsap.to(newsDisplay.current, {
             height: "auto",
-            paddingBottom: 20,
         })
         gsap.to(arrow.current, {
             rotateZ: 90
@@ -40,7 +39,6 @@ export default function News({ category, title }){
         const handleCloseClick = () => {
         gsap.to(newsDisplay.current, {
             height: 0,
-            paddingBottom: 0,
         })
         gsap.to(arrow.current, {
             rotateZ: 0

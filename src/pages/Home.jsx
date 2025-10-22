@@ -25,7 +25,7 @@ export default function Home(){
             <News category="technology" title="technology"/>
             <News category="world" title="world"/> */}
         </section>
-        <Nav/>
+        <Nav home="#4D861F"/>
         </>
     )
 }

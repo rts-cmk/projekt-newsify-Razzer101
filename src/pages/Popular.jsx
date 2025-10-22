@@ -6,7 +6,7 @@ export default function Popular(){
         <>
             <Header/>
             <section className="popular-section"></section>
-            <Nav/>
+            <Nav popular="#4D861F"/>
         </>
     )
 }
