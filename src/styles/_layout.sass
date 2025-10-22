@@ -1,5 +1,13 @@
 @use "variables" as var
 
+.news-section
+    display: flex
+    flex-direction: column
+
+    &:last-of-type
+        border-bottom: 2px solid var.$dark-border
+        margin-bottom: 5em
+    
 .settings-section
     &__h2
         text-align: center

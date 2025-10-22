@@ -8,21 +8,23 @@ export default function PopularNews({ category, title }){
     const newsDisplay = useRef()
     const arrow = useRef()
 
-    useEffect(()=>{
-        const API_KEY = import.meta.env.VITE_API_KEY
+    if(!localStorage.getItem(`${category}Display`)){
+        useEffect(()=>{
+            const API_KEY = import.meta.env.VITE_API_KEY
 
-        const fetchData = async () => {
-            const url = new URL(`https://api.nytimes.com/svc/mostpopular/v2//emailed/7.json`)
-            url.searchParams.set("api-key", API_KEY)
+            const fetchData = async () => {
+                const url = new URL(`https://api.nytimes.com/svc/mostpopular/v2//emailed/7.json`)
+                url.searchParams.set("api-key", API_KEY)
 
-            const response = await fetch(url)
-            const data = await response.json()
-                setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
-                console.log(data.results.filter((item) => item.nytdsection === `${category}`))
-        }
+                const response = await fetch(url)
+                const data = await response.json()
+                    setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
+                    console.log(data.results.filter((item) => item.nytdsection === `${category}`))
+            }
 
-        fetchData()
-    },[])
+            fetchData()
+        },[])
+    }
     
     const handleOpenClick = () => {
         gsap.to(newsDisplay.current, {

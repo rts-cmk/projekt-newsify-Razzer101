@@ -8,22 +8,25 @@ export default function News({ category, title }){
     const newsDisplay = useRef()
     const arrow = useRef()
 
-    useEffect(()=>{
-        const API_KEY = import.meta.env.VITE_API_KEY
+    if(!localStorage.getItem(`${category}Display`)){
+        useEffect(()=>{
+            const API_KEY = import.meta.env.VITE_API_KEY
 
-        const fetchData = async () => {
-            const url = new URL(`https://api.nytimes.com/svc/topstories/v2/${category}.json`)
-            url.searchParams.set("api-key", API_KEY)
+            const fetchData = async () => {
+                const url = new URL(`https://api.nytimes.com/svc/topstories/v2/${category}.json`)
+                url.searchParams.set("api-key", API_KEY)
 
-            const response = await fetch(url)
-            const data = await response.json()
-                setNewsData(data.results.slice(0, 5))
-                console.log(data.results.slice(0, 5)) 
+                const response = await fetch(url)
+                const data = await response.json()
+                    setNewsData(data.results.slice(0, 5))
+                    console.log(data.results.slice(0, 5)) 
 
-        }
+            }
 
-        fetchData()
-    },[])
+            fetchData()
+        },[])
+    }
+
     
     const handleOpenClick = () => {
         gsap.to(newsDisplay.current, {
@@ -51,8 +54,8 @@ export default function News({ category, title }){
         return
     } else{
         return(
-            <div className="news-category">
-                <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="news-category__btn">
+            <>
+                <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="news-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>
                     <div ref={arrow}>&#8250;</div>
@@ -62,18 +65,20 @@ export default function News({ category, title }){
                     newsData !== null &&
                         newsData.map((elm) => {
                             return (
-                                <a key={elm.uri} className="news-box" href={elm.url}>
+                                <div key={elm.uri}>
+                                <a className="news-box" href={elm.url}>
                                     <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
                                     <article className="news-box__article">
                                         <h3>{elm.title.slice(0, 25)}...</h3>
                                         <p>{elm.abstract.slice(0, 60)}...</p>
                                     </article>
                                 </a>
+                                </div>
                             )
                         })
                     }
                 </div>
-            </div>
+            </>
         )
     }
     

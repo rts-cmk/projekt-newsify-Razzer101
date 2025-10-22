@@ -6,7 +6,7 @@ export default function Nav({ home = "black", archive = "black", popular = "blac
         <nav className="nav-section">
             <ul className="nav-ul">
                 <li className="nav-ul__li">
-                    <Link to="/" style={{color: home}}>
+                    <Link to="/home" style={{color: home}}>
                     <TbHome/>
                     <p>Home</p>
                     </Link>
