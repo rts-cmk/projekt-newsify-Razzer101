@@ -18,9 +18,9 @@ export default function Home(){
         <section className="news-section">
             {/* <News category="world" title="world"/> */}
             <News category="health" title="health"/>
-            <News category="sports" title="Sport"/>
+            <News category="sports" title="sport"/>
             {/* <News category="business" title="business"/> */}
-            <News category="travel" title="Travel"/>
+            <News category="travel" title="travel"/>
         </section>
         <Nav home="#4D861F"/>
         </>

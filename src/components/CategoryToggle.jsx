@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CategoryToggle({ category, title }){
 
@@ -16,6 +16,16 @@ export default function CategoryToggle({ category, title }){
             setBtnToggleColor("#c4c4c4")
         }
     }
+
+    useEffect(() => {
+        if(localStorage.getItem(`${category}Display`)){
+            setBtnToggle("end")
+            setBtnToggleColor("#c4c4c4")
+        } else{
+            setBtnToggle("start")
+            setBtnToggleColor("#4D861F")
+        }
+    },[])
 
     return(
         <div className="settings-category">
