@@ -20,7 +20,6 @@ export default function News({ category, title}){
                 const response = await fetch(url)
                 const data = await response.json()
                     setNewsData(data.results.slice(0, 5))
-                    console.log(data.results.slice(0, 5)) 
             }
 
             fetchData()

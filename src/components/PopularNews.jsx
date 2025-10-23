@@ -19,7 +19,6 @@ export default function PopularNews({ category, title }){
                 const response = await fetch(url)
                 const data = await response.json()
                     setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
-                    console.log(data.results.filter((item) => item.nytdsection === `${category}`))
             }
 
             fetchData()

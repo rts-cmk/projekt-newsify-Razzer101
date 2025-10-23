@@ -7,11 +7,13 @@ export default function Settings(){
     const app = document.documentElement
 
     const handleDarkModeChange = () => {
-        app.setAttribute("data-theme", 
-            app.getAttribute("data-theme") === "dark" ? "light" :
-            app.getAttribute("data-theme") === "light" ? "dark" :
-            window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark"
-        )
+        if(localStorage.getItem("darkmode") === "light"){
+            app.setAttribute("data-theme", "dark")
+            localStorage.setItem("darkmode", "dark")
+        } else {
+            app.setAttribute("data-theme", "light")
+            localStorage.setItem("darkmode", "light")
+        }
     }
 
     return(

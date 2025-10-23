@@ -12,10 +12,14 @@ function App() {
   const app = document.documentElement
 
   useEffect(() => {
-    localStorage.setItem("darkmode", "light")
-    if(localStorage.getItem("darkmode") === "light"){
+    if(!localStorage.getItem("darkmode") || localStorage.getItem("darkmode") === "light"){
+      localStorage.setItem("darkmode", "light")
       app.setAttribute("data-theme", "light")
     }
+    if(localStorage.getItem("darkmode") === "dark"){
+      app.setAttribute("data-theme", "dark")
+    }
+
   },[])
 
   return (
