@@ -1,7 +1,11 @@
 @use "variables" as var
     
+html
+    color-scheme: light dark
+
 body
     margin: 0
+    background-color: light-dark(white, var.$dark-mode-bg-color)
 
 h1, h2, h3, h4
     font-family: var.$h-font

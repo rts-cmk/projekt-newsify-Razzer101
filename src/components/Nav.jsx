@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { TbHome, TbBookmark, TbStar, TbSettings } from "react-icons/tb";
 
-export default function Nav({ home = "black", archive = "black", popular = "black", settings = "black" }){
+export default function Nav({ home, archive, popular, settings }){
     return(
         <nav className="nav-section">
             <ul className="nav-ul">

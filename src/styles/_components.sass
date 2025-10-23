@@ -7,7 +7,7 @@
     display: flex
     flex-direction: column
     justify-content: center
-    background-color: white
+    background-color: light-dark(white, var.$dark-mode-bg-color)
     position: absolute
     top: 0
     left: 0
@@ -34,7 +34,7 @@
     z-index: 2
     width: 100%
     height: 100vh
-    background-color: white
+    background-color: light-dark(white, var.$dark-mode-bg-color)
 
 .slider
     width: 100%
@@ -58,7 +58,6 @@
         text-align: center
         padding: 0 2em
         margin-bottom: 3em
-        background-color: white
 
         h1
             font-size: 2.2em
@@ -74,12 +73,11 @@
     display: flex
     justify-content: center
     padding-bottom: 3em
-    background-color: white
 
     &__span
         width: 14px
         height: 14px
-        background-color: #00000047
+        background-color: light-dark(#00000047, #ffffffcc)
         border-radius: 50%
         margin: 0 5px
 
@@ -106,7 +104,6 @@
     display: flex
     justify-content: space-between
     padding: 0 1em
-    background-color: white
 
     button
         font-weight: 500
@@ -138,7 +135,7 @@
     z-index: 1
     width: 100%
     height: 100vh
-    background-color: white
+    background-color: light-dark(white, var.$dark-mode-bg-color)
     text-align: center
 
     &__p
@@ -151,7 +148,7 @@
         padding: 1.2em 0
         font-weight: 500
         background-color: var.$newsify-green
-        border: 1px solid var.$dark-border
+        border: none
         border-radius: 30px
         font-size: 1em
         width: 85%
@@ -317,7 +314,7 @@
     width: 100vw
     padding: 1em 1.5em 1em 1.5em
     text-decoration: none
-    color: black
+    color: light-dark(black, white)
     scroll-snap-stop: always
     scroll-snap-align: start
 
@@ -341,6 +338,7 @@
         p
             margin: 0
             font-size: 3.4vw
+            font-weight: 300
 
 .popular-news-box
     border-bottom: 1px solid var.$dark-border
@@ -395,7 +393,7 @@
     width: 100%
     position: fixed
     bottom: 0
-    background-color: white
+    background-color: light-dark(white, var.$dark-mode-bg-color)
     z-index: 2
     box-shadow: 0 0 10px 5px #00000032
     padding: 1em 0 1.5em 0
@@ -414,6 +412,7 @@
             display: flex
             flex-direction: column
             align-items: center
+            color: light-dark(black, white)
 
             svg
                 font-size: 1.5em
