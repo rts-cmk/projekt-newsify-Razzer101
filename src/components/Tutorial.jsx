@@ -5,7 +5,7 @@ export default function Tutorial(){
 
     const [tutorialDisplay, setTutorialDisplay] = useState("block")
     const [slideDisplay, setSlideDisplay] = useState(1)
-
+    const [dotsPos, setDotsPos] = useState("start")
     useEffect(() => {
         if(localStorage.getItem("tutorialTrigger")){
             setTutorialDisplay("none");
@@ -46,10 +46,26 @@ export default function Tutorial(){
                 <span className="slider-dots__span"></span>
                 <span className="slider-dots__span"></span>
                 <span className="slider-dots__span"></span>
+                <span className="slider-dots__span"></span>
+                <div className="slider-dots__slider-page">
+                    <div style={{justifyContent: dotsPos}}>
+                        <span></span>
+                    </div>
+                </div>
             </div>
             <div className="slider-btns">
                 <button onClick={() => {setTutorialDisplay("none")}} className="slider-btns__skip">Skip</button>
-                <button onClick={() => {slideDisplay === 3 ? setTutorialDisplay("none") : setSlideDisplay(slideDisplay + 1)}} className="slider-btns__continue">Continue</button>
+                <button onClick={() => {slideDisplay === 3 ? setTutorialDisplay("none") : setSlideDisplay( (current) => {
+                    const newdisplay = current + 1
+                    if(newdisplay === 1){
+                        setDotsPos("start")
+                    } else if(newdisplay === 2){
+                        setDotsPos("center")
+                    } else {
+                        setDotsPos("end")
+                    }
+                    return newdisplay
+                })}} className="slider-btns__continue">Continue</button>
             </div>
         </section>
     )
