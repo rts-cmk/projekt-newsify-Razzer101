@@ -9,7 +9,6 @@ export default function ArchivedNews({ category, title }){
     const arrow = useRef()
 
     const data = JSON.parse(localStorage.getItem(`${category}ArchivedData`))
-
     const [archivedData, setArchivedData] = useState(data)
 
     const handleRemoveClick = (elm) => {
