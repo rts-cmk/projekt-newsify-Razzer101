@@ -9,7 +9,7 @@ export default function Login(){
             <section className="login-section">
                 <figure className="login-logo">
                     <img className="login-logo__img" src="newsifyLogo.png" alt="Newsify logo" />
-                    <h1 className="login-logo__h1">Newsify</h1>
+                    <h3 className="login-logo__h3">Newsify</h3>
                 </figure>
                 <p className="login-section__p">Welcome! Let’s dive into your account!</p>
                 <div className="login-btns">

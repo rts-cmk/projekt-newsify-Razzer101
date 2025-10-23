@@ -3,12 +3,12 @@
 /* #region Startup logo */
 .startup-logo-section
     width: 100%
-    height: 100vh
+    min-height: 100dvh
     display: flex
     flex-direction: column
     justify-content: center
     background-color: light-dark(white, var.$dark-mode-bg-color)
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     z-index: 3
@@ -33,7 +33,7 @@
     left: 0
     z-index: 2
     width: 100%
-    height: 100vh
+    min-height: 100dvh
     background-color: light-dark(white, var.$dark-mode-bg-color)
 
 .slider
@@ -59,7 +59,7 @@
         padding: 0 2em
         margin-bottom: 3em
 
-        h1
+        h2
             font-size: 2.2em
             font-weight: 800
             margin-top: 0
@@ -72,7 +72,7 @@
 .slider-dots
     display: flex
     justify-content: center
-    padding-bottom: 3em
+    margin-bottom: 3em
 
     &__span
         width: 14px
@@ -134,7 +134,7 @@
     left: 0
     z-index: 1
     width: 100%
-    height: 100vh
+    min-height: 100dvh
     background-color: light-dark(white, var.$dark-mode-bg-color)
     text-align: center
 
@@ -164,7 +164,7 @@
     &__img
         width: 20%
 
-    &__h1
+    &__h3
         font-weight: 900
         font-size: 2.2em
         margin-top: 10px
@@ -246,8 +246,12 @@
         font-size: 1em
         padding: 1em
         border: none
-        background-color: #f0f0f0
+        background-color: #eaeaea
         border-radius: 5px
+        color: #444444
+
+        &::placeholder
+            color: #444444
 /* #endregion */
 
 /* #region News */

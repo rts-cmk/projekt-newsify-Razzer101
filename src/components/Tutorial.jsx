@@ -22,21 +22,21 @@ export default function Tutorial(){
                 <figure className={`slider__figure ${slideDisplay === 1 ? "slider__figure--block" : "slider__figure--none"}`}>
                     <img className="slider__img" src="tutorialImg1.png" alt="Stay connected" />
                     <figcaption className="slider__figcaption">
-                        <h1>Stay Conected, <br /> Everywhere, Anytime</h1>
+                        <h2>Stay Conected, <br /> Everywhere, Anytime</h2>
                         <p>Welcome to Newsify, your ultimate destination for breaking news, exclusive stories, and tailored content.</p>
                     </figcaption>
                 </figure>
                 <figure className={`slider__figure ${slideDisplay === 2 ? "slider__figure--block" : "slider__figure--none"}`}>
                     <img className="slider__img" src="tutorialImg2.png" alt="Become Savvy" />
                     <figcaption className="slider__figcaption">
-                        <h1>Become a Savvy <br /> Global Citizen.</h1>
+                        <h2>Become a Savvy <br /> Global Citizen.</h2>
                         <p>Discover tailored news that aligns with your interests and preferences. Your personalized news journey awaits!</p>
                     </figcaption>
                 </figure>
                 <figure className={`slider__figure ${slideDisplay === 3 ? "slider__figure--block" : "slider__figure--none"}`}>
                     <img className="slider__img" src="tutorialImg3.png" alt="Enhance you news" />
                     <figcaption className="slider__figcaption">
-                        <h1>Enhance your News <br /> Journey Now!</h1>
+                        <h2>Enhance your News <br /> Journey Now!</h2>
                         <p>Be part of our dynamic community and contribute your insights and participate in enriching conversations.</p>
                     </figcaption>
                 </figure>
