@@ -5,10 +5,18 @@ import Archive from "./pages/Archive"
 import Popular from "./pages/Popular"
 import Settings from "./pages/Settings"
 import Error from "./pages/Error"
+import { useEffect } from "react"
 
 function App() {
 
+  const app = document.documentElement
 
+  useEffect(() => {
+    localStorage.setItem("darkmode", "light")
+    if(localStorage.getItem("darkmode") === "light"){
+      app.setAttribute("data-theme", "light")
+    }
+  },[])
 
   return (
     <>
