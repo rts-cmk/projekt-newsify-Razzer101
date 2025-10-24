@@ -36,7 +36,7 @@ export default function PopularNews({ category, title }){
         setIsOpen(true)
     }
 
-        const handleCloseClick = () => {
+    const handleCloseClick = () => {
         gsap.to(newsDisplay.current, {
             height: 0,
         })
@@ -63,7 +63,7 @@ export default function PopularNews({ category, title }){
                         popularNewsData.map((elm) => {
                             return (
                                 <a key={elm.uri} className="popular-news-box" href={elm.url}>
-                                    <img className="popular-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
+                                    <img className="popular-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 25)}...`} />
                                     <article className="popular-news-box__article">
                                         <h3>{elm.title.slice(0, 25)}...</h3>
                                         <p>{elm.abstract.slice(0, 60)}...</p>

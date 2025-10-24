@@ -71,7 +71,7 @@ export default function News({ category, title}){
                             return (
                                 <div key={elm.uri} className="news-box-section">
                                     <a className="news-box" href={elm.url}>
-                                        <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 30)}...`} />
+                                        <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 25)}...`} />
                                         <article className="news-box__article">
                                             <h3>{elm.title.slice(0, 25)}...</h3>
                                             <p>{elm.abstract.slice(0, 60)}...</p>

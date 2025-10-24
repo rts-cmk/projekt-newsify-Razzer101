@@ -1,8 +1,8 @@
 # Projektdokumentation
 
-**Navn:** 
+**Navn:** Rasmus Kjærulf Søndergaard
 
-**Hold:** WUxx
+**Hold:** WU14
 
 **Uddannelse:** Webudvikler
 
@@ -14,19 +14,22 @@
 ## Teknologier
 
 -   HTML
--   CSS
+-   Sass
 -   JavaScript
--   Webpack
--	Jest
--   ...
+-   Vite
+-	React
+
 
 ---
 
 
-
 ### Redegørelse for oprindelsen af evt. tredjeparts kode anvendt i opgaveløsningen (Teknisk dokumentation)
 
-(Hvilke node-pakker har du installeret for at dit projekt virker? Beskriv kort hvilket "problem" hver pakke løser.)
+React-Router: Bliver brugt til at lave nem og hurtig navigering mellem sider i projektet. Sørger for at projektet ikke reloader på side skift.
+
+React-Icons - Tilbyder de ikoner som bliver brugt i bl.a navigation bar.
+
+Gsap - Den animation library som alt animation i projektet gør brug af. Giver nemmere muglighed for at animere elementer gennem jsx filer og memmere muglighed for at få javascript kode til at starte efter animationen er færdig.
 
 ---
 

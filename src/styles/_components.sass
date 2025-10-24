@@ -243,11 +243,13 @@
 /* #region Searchbar */
 .searchbar
     display: flex
+    flex-direction: column
     justify-content: center
-    padding: 0 25px 1.5em 25px
+    align-items: center
+    margin-bottom: 1.5em
 
     &__input
-        width: 100%
+        width: 80%
         font-size: 1em
         padding: 1em
         border: none
@@ -257,6 +259,44 @@
 
         &::placeholder
             color: #444444
+
+.search-display
+    position: relative
+    width: 100%
+    padding: 0
+    overflow: hidden
+    height: 0
+
+.search-news-box
+    display: flex
+    width: 100vw
+    padding: 1em 1.5em 1em 1.5em
+    text-decoration: none
+    color: light-dark(black, white)
+    scroll-snap-stop: always
+    scroll-snap-align: start
+
+    &__img
+        width: 4.8em
+        border-radius: 10px
+        margin-right: 20px
+
+    &__article
+        width: calc( 100vw - 145px )
+        display: flex
+        flex-direction: column
+        justify-content: center
+        text-wrap: wrap
+
+        h3
+            margin-top: 0
+            margin-bottom: 3px
+            font-size: 4.4vw
+
+        p
+            margin: 0
+            font-size: 3.4vw
+            font-weight: 300
 /* #endregion */
 
 /* #region News */
@@ -352,7 +392,7 @@
             font-size: 3.4vw
             font-weight: 300
 
-.popular-news-box
+.popular-news-box, .search-news-box
     border-bottom: 1px solid var.$dark-border
 
     &:first-child
