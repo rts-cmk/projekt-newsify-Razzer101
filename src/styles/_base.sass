@@ -3,6 +3,12 @@
 html
     color-scheme: light dark
 
+html[data-theme="light"] 
+  color-scheme: light
+
+html[data-theme="dark"] 
+  color-scheme: dark
+
 body
     margin: 0
     background-color: light-dark(white, var.$dark-mode-bg-color)
@@ -15,10 +21,3 @@ p
 
 button
     font-family: var.$text-font
-
-html[data-theme="light"] 
-  color-scheme: light
-
-
-html[data-theme="dark"] 
-  color-scheme: dark
