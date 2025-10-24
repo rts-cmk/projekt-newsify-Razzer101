@@ -11,12 +11,10 @@ export default function Searchbar(){
 
     const handleOpenClick = () => {
         gsap.to(searchDisplay.current, {
-            delay: 1,
             height: "auto",
             marginTop: 20
         })
         gsap.to(searchbar.current, {
-            delay: 1,
             marginBottom: 0
         })
     }
@@ -42,12 +40,11 @@ export default function Searchbar(){
                 url.searchParams.set("api-key", API_KEY)
                 const response = await fetch(url)
                 const data = await response.json()
-                setSearchData(data.response.docs.slice(0, 5))
-                console.log(data.response.docs)
+                setSearchData(data.response.docs)
+                setCloseAnimation(true)
+                handleOpenClick()
             }
             fetchData()
-            setCloseAnimation(true)
-            handleOpenClick()
         }
         if(e.key === "Backspace" && closeAnimation === true){
             handleCloseClick()
