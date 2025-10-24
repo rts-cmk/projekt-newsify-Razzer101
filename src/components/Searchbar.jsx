@@ -43,6 +43,7 @@ export default function Searchbar(){
                 const response = await fetch(url)
                 const data = await response.json()
                 setSearchData(data.response.docs.slice(0, 5))
+                console.log(data.response.docs)
             }
             fetchData()
             setCloseAnimation(true)
@@ -62,7 +63,7 @@ export default function Searchbar(){
                 searchData !== null &&
                     searchData.map((elm) => {
                         return (
-                            <a key={elm.uri} className="search-news-box" href={elm.url}>
+                            <a key={elm.uri} className="search-news-box" href={elm.web_url}>
                                 <img className="search-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.headline.main.slice(0, 25)}...`} />
                                 <article className="search-news-box__article">
                                     <h3>{elm.headline.main.slice(0, 25)}...</h3>
