@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 export default function Login(){
 
     const navigateHome = useNavigate()
-     const [loginReturn, setLoginReturn] = useState(null)
+    const [loginReturn, setLoginReturn] = useState(null)
 
     useEffect(() => {
         if(localStorage.getItem("loginTrigger")){

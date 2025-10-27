@@ -13,12 +13,13 @@ export default function PopularNews({ category, title }){
             const API_KEY = import.meta.env.VITE_API_KEY
 
             const fetchData = async () => {
-                const url = new URL(`https://api.nytimes.com/svc/mostpopular/v2//emailed/7.json`)
-                url.searchParams.set("api-key", API_KEY)
+                const emailedUrl = new URL("https://api.nytimes.com/svc/mostpopular/v2//emailed/30.json")
+                emailedUrl.searchParams.set("api-key", API_KEY)
 
-                const response = await fetch(url)
+                const response = await fetch(emailedUrl)
                 const data = await response.json()
-                    setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
+                setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
+                console.log(data)
             }
 
             fetchData()
@@ -63,7 +64,7 @@ export default function PopularNews({ category, title }){
                         popularNewsData.map((elm) => {
                             return (
                                 <a key={elm.uri} className="popular-news-box" href={elm.url}>
-                                    <img className="popular-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 25)}...`} />
+                                    <img className="popular-news-box__img" src={`${elm.media[0]?.["media-metadata"][0].url}`||`${elm.media[0]?.["media-metadata"][1].url}`||`${elm.media[0]?.["media-metadata"][2].url}`||`https://placehold.co/200?text=No%20Img`} alt={`${elm.title.slice(0, 25)}...`} />
                                     <article className="popular-news-box__article">
                                         <h3>{elm.title.slice(0, 25)}...</h3>
                                         <p>{elm.abstract.slice(0, 60)}...</p>

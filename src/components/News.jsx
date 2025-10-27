@@ -16,10 +16,9 @@ export default function News({ category, title}){
             const fetchData = async () => {
                 const url = new URL(`https://api.nytimes.com/svc/topstories/v2/${category}.json`)
                 url.searchParams.set("api-key", API_KEY)
-
                 const response = await fetch(url)
                 const data = await response.json()
-                    setNewsData(data.results.slice(0, 5))
+                setNewsData(data.results.slice(0, 5))
             }
 
             fetchData()
@@ -71,7 +70,7 @@ export default function News({ category, title}){
                             return (
                                 <div key={elm.uri} className="news-box-section">
                                     <a className="news-box" href={elm.url}>
-                                        <img className="news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.title.slice(0, 25)}...`} />
+                                        <img className="news-box__img" src={`${elm.multimedia[0].url}`||`${elm.multimedia[1].url}`||`${elm.multimedia[2].url}`||`https://placehold.co/200?text=No%20Img`} alt={`${elm.title.slice(0, 25)}...`} />
                                         <article className="news-box__article">
                                             <h3>{elm.title.slice(0, 25)}...</h3>
                                             <p>{elm.abstract.slice(0, 60)}...</p>
