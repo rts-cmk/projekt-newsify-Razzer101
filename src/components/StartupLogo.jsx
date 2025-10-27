@@ -9,12 +9,9 @@ export default function StartupLogo(){
     const h1 = useRef()
     const navigateHome = useNavigate()
 
-    const skipFunction = () => {
-        if(localStorage.getItem("loginTrigger")){
-            localStorage.setItem("loginTrigger", false);
+    const rerouteFunction = () => {
+        if(localStorage.getItem("loginTrigger") === "false"){
             navigateHome("/home")
-        } else{
-            localStorage.setItem("loginTrigger", true);
         }
     }
 
@@ -37,7 +34,7 @@ export default function StartupLogo(){
         })
         .to(h1.current, {
             opacity: 0,
-            onComplete: skipFunction
+            onComplete: rerouteFunction
         })
         .to(section.current, {
             opacity: 0,
