@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 
-export default function PopularNews({ category, title }){
+export default function PopularNews({ category, title, categoryOrder }){
 
     const [popularNewsData, setPopularNewsData] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -67,7 +67,7 @@ export default function PopularNews({ category, title }){
         return
     } else{
         return(
-            <>
+            <div className={`news-category-${category}`} style={{ order: categoryOrder }}>
                 <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="popular-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>
@@ -89,7 +89,7 @@ export default function PopularNews({ category, title }){
                         })
                     }
                 </div>
-            </>
+            </div>
         )
     }
     

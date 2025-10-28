@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { TbBookmark } from "react-icons/tb"
 
-export default function News({ category, title}){
+export default function News({ category, title, categoryOrder}){
 
     const [newsData, setNewsData] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -57,18 +57,18 @@ export default function News({ category, title}){
         return
     } else{
         return(
-            <>
+            <div className={`news-category-${category}`} style={{ order: categoryOrder }}>
                 <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="news-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>
                     <div ref={arrow}>&#8250;</div>
                 </button>
-                <div ref={newsDisplay} className="news-display">
+                <ul ref={newsDisplay} className="news-display">
                     { 
                     newsData !== null &&
                         newsData.map((elm) => {
                             return (
-                                <div key={elm.uri} className="news-box-section">
+                                <li key={elm.uri} className="news-box-section">
                                     <a className="news-box" href={elm.url}>
                                         <img className="news-box__img" src={`${elm.multimedia?.[0]?.url}`||`${elm.multimedia?.[1]?.url}`||`${elm.multimedia?.[2]?.url}`||`https://placehold.co/200?text=No%20Img`} alt={`${elm.title.slice(0, 25)}...`} />
                                         <article className="news-box__article">
@@ -77,12 +77,12 @@ export default function News({ category, title}){
                                         </article>
                                     </a>
                                     <button onClick={() => handleSaveClick(elm)} className="news-box-section__btn" style={{backgroundColor: "#46781b"}}><TbBookmark/></button>
-                                </div>
+                                </li>
                             )
                         })
                     }
-                </div>
-            </>
+                </ul>
+            </div>
         )
     }
     
