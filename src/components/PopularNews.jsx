@@ -19,22 +19,6 @@ export default function PopularNews({ category, title, categoryOrder }){
                 const response = await fetch(url)
                 const data = await response.json()
                 setPopularNewsData(data.results.filter((item) => item.nytdsection === `${category}`))
-
-                // const emailedUrl = new URL("https://api.nytimes.com/svc/mostpopular/v2//emailed/1.json")
-                // emailedUrl.searchParams.set("api-key", API_KEY)
-                // const sharedUrl = new URL("https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json")
-                // sharedUrl.searchParams.set("api-key", API_KEY)
-
-                // const urls = [emailedUrl, sharedUrl]
-
-                // const dataArray = await Promise.all(urls.map(async (url) => {
-                //     const response = await fetch(url)
-                //     const array = await response.json()
-                //     return array.results
-                // }))
-                // const data = dataArray.flat()
-                // setPopularNewsData(data.filter((item) => item.nytdsection === `${category}`))
-                // console.log(data.filter((item) => item.nytdsection === `${category}`))
             }
 
             fetchData()
