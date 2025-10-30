@@ -12,7 +12,7 @@ export default function Archive(){
             <section className="archive-section">
                 {categoryOrder.map((itemCategory) => {
                     return(
-                        <ArchivedNews category={itemCategory} title={itemCategory}/>
+                        <ArchivedNews category={itemCategory} title={itemCategory} key={itemCategory}/>
                     )
                 })}
             </section>

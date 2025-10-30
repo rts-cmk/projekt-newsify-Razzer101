@@ -14,7 +14,7 @@ export default function Home(){
             <section className="news-section">
                 {categoryOrder.map((itemCategory) => {
                     return(
-                        <News category={itemCategory} title={itemCategory}/>
+                        <News category={itemCategory} title={itemCategory} key={itemCategory}/>
                     )
                 })}
             </section>

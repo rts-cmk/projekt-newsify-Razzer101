@@ -12,7 +12,7 @@ export default function Popular(){
             <section className="popular-section">
                 {categoryOrder.map((itemCategory) => {
                     return(
-                        <PopularNews category={itemCategory} title={itemCategory}/>
+                        <PopularNews category={itemCategory} title={itemCategory} key={itemCategory}/>
                     )
                 })}
             </section>
