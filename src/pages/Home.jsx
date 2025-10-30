@@ -5,16 +5,18 @@ import News from "../components/News"
 
 export default function Home(){
 
+    const categoryOrder = localStorage.getItem("categoryOrder") ? JSON.parse(localStorage.getItem("categoryOrder")) : ["world", "health", "sports", "business", "travel"]
+
     return(
         <>
             <Header/>
             <Searchbar/>
             <section className="news-section">
-                <News category="world" title="world" categoryOrder="1"/>
-                <News category="health" title="health" categoryOrder="2"/>
-                <News category="sports" title="sports" categoryOrder="3"/>
-                <News category="business" title="business" categoryOrder="4"/>
-                <News category="travel" title="travel" categoryOrder="5"/>
+                {categoryOrder.map((itemCategory) => {
+                    return(
+                        <News category={itemCategory} title={itemCategory}/>
+                    )
+                })}
             </section>
             <Nav home="#4D861F"/>
         </>

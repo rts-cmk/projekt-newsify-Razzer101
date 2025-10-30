@@ -3,15 +3,18 @@ import Nav from "../components/Nav"
 import ArchivedNews from "../components/ArchivedNews"
 
 export default function Archive(){
+
+    const categoryOrder = localStorage.getItem("categoryOrder") ? JSON.parse(localStorage.getItem("categoryOrder")) : ["world", "health", "sports", "business", "travel"]
+
     return(
         <>
             <Header/>
             <section className="archive-section">
-                <ArchivedNews category="world" title="world" categoryOrder="1"/>
-                <ArchivedNews category="health" title="health" categoryOrder="2"/>
-                <ArchivedNews category="sports" title="sports" categoryOrder="3"/>
-                <ArchivedNews category="business" title="business" categoryOrder="4"/>
-                <ArchivedNews category="travel" title="travel" categoryOrder="5"/>
+                {categoryOrder.map((itemCategory) => {
+                    return(
+                        <ArchivedNews category={itemCategory} title={itemCategory}/>
+                    )
+                })}
             </section>
             <Nav archive="#4D861F"/>
         </>

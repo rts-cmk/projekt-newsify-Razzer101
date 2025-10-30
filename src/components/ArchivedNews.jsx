@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import gsap from "gsap"
 import { TbTrash } from "react-icons/tb"
 
-export default function ArchivedNews({ category, title, categoryOrder }){
+export default function ArchivedNews({ category, title }){
 
     const [isOpen, setIsOpen] = useState(false)
     const newsDisplay = useRef()
@@ -45,7 +45,7 @@ export default function ArchivedNews({ category, title, categoryOrder }){
         return
     } else{
         return(
-            <div className={`news-category-${category}`} style={{ order: categoryOrder }}>
+            <div className={`news-category-${category}`}>
                 <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="archive-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>

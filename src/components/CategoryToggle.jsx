@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function CategoryToggle({ category, title }){
+export default function CategoryToggle({ category , onDragStart, onDragOver, onDrop}){
 
     const [btnToggle, setBtnToggle] = useState("start")
     const [btnToggleColor, setBtnToggleColor] = useState("#4D861F")
@@ -28,9 +28,15 @@ export default function CategoryToggle({ category, title }){
     },[])
 
     return(
-        <div className="settings-category">
+        <div 
+            className="settings-category"
+            draggable 
+            onDragStart={onDragStart}
+            onDragOver={onDragOver}
+            onDrop={onDrop}
+        >
             <img className="settings-category__img" src="newsifyLogo.png" alt="Newsify logo" />
-            <h4 className="settings-category__h4">{title}</h4>
+            <h4 className="settings-category__h4">{category}</h4>
             <button onClick={() => handleToggle()} className="Setting-toggle" style={{justifyContent: btnToggle, backgroundColor: btnToggleColor}}>
                 <div className="Setting-toggle__div"></div>
             </button>

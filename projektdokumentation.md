@@ -18,6 +18,7 @@
 -   JavaScript
 -   Vite
 -	React
+-   Vitest
 
 ### Redegørelse for oprindelsen af evt. tredjeparts kode anvendt i opgaveløsningen (Teknisk dokumentation)
 

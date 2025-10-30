@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { TbBookmark } from "react-icons/tb"
 
-export default function News({ category, title, categoryOrder}){
+export default function News({ category, title }){
 
     const [newsData, setNewsData] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -58,7 +58,7 @@ export default function News({ category, title, categoryOrder}){
         return
     } else{
         return(
-            <div className={`news-category-${category}`} style={{ order: categoryOrder }}>
+            <div className={`news-category-${category}`}>
                 <button onClick={() => isOpen ? handleCloseClick() : handleOpenClick()} className="news-section__btn">
                     <img src="newsifyLogo.png" alt="Newsify logo" />
                     <h2>{title}</h2>
