@@ -43,6 +43,7 @@ export default function Searchbar(){
                 setSearchData(data.response.docs)
                 setCloseAnimation(true)
                 handleOpenClick()
+                console.log(data.response.docs)
             }
             fetchData()
         }
@@ -61,7 +62,7 @@ export default function Searchbar(){
                     searchData.map((elm) => {
                         return (
                             <a key={elm.uri} className="search-news-box" href={elm.web_url}>
-                                <img className="search-news-box__img" src="https://placehold.co/200?text=No%20Img" alt={`${elm.headline.main.slice(0, 25)}...`} />
+                                <img className="search-news-box__img" src={`${elm.multimedia?.default?.url}`||`${elm.multimedia?.thumbnail?.url}`||`https://placehold.co/200?text=No%20Img`} alt={`${elm.headline.main.slice(0, 25)}...`} />
                                 <article className="search-news-box__article">
                                     <h3>{elm.headline.main.slice(0, 25)}...</h3>
                                     <p>{elm.abstract.slice(0, 60)}...</p>
