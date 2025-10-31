@@ -266,43 +266,15 @@
         &::placeholder
             color: #444444
 
+        &:focus
+            outline-color: light-dark(black, white)
+
 .search-display
     position: relative
     width: 100%
     padding: 0
     overflow: hidden
     height: 0
-
-.search-news-box
-    display: flex
-    width: 100vw
-    padding: 1em 1.5em 1em 1.5em
-    text-decoration: none
-    color: light-dark(black, white)
-    scroll-snap-stop: always
-    scroll-snap-align: start
-
-    &__img
-        width: 4.8em
-        border-radius: 10px
-        margin-right: 20px
-
-    &__article
-        width: calc( 100vw - 145px )
-        display: flex
-        flex-direction: column
-        justify-content: center
-        text-wrap: wrap
-
-        h3
-            margin-top: 0
-            margin-bottom: 3px
-            font-size: 4.4vw
-
-        p
-            margin: 0
-            font-size: 3.4vw
-            font-weight: 300
 /* #endregion */
 
 /* #region News */
