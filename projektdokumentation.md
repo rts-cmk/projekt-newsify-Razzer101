@@ -8,7 +8,7 @@
 
 **Uddannelsessted:** Roskilde Tekniske Skole
 
-[Link til min applikaton](http://example.com/)
+**Link til hjemmesiden:** mynewsify.vercel.app
 
 
 ## Teknologier
@@ -38,6 +38,8 @@ Gsap - Den animation library som alt animation i projektet gør brug af. Giver n
 
 - Den side man starter på viser startup animationen, tutorial, og login. Hvor efter man så bliver ført hen til /home. Af at tutorial og login kun bliver vist 1 gang så syntes jeg at det var mere optimalt at have det på en seperat side (første side) sammen med sartup animationen end det hovedsaglige indhold. Hvis man så går tilbage til start-siden (eller folader hjemmesiden og går ind på det igen) vil man kun blive mødt af startup animationen og der efter blive ført videre til det hovedsaglige indhold.
 
+- Redigering af kategoriernes rækkefølge valgte jeg at lave en drag and drop funktion i settings hvor man kan trække de foskellige kategorier rundt for at bestemme deres rækkefølge fra top til bund. Jeg ville gerne sørge for at hjemmesiden så ud som reference matrialet og undgik at lave noget lignende fx. af knapper.
+
 ### Vurdering af egen indsats & gennemførelse af opgaveforløbet (Arbejdsgangen)
 
 Jeg syntes for det meste at det hele gik super godt. Jeg fik lært en masse nyt for at nå i mål med projektet som jeg kan bruge senere hen. Det er nogle små visuelle fejl her og der som jeg altid kan få fikset en anden dag men ellers syntes jeg selv at det ser rimelig fint ud.
@@ -45,16 +47,14 @@ I starten brugte jeg et stykke tid med at prøve at sætte alt fra start-siden i
 
 ### En beskrivelse af særlige punkter til bedømmelse
 
-(er der en særlig detalje som du synes din underviser bør lægge mærke til når dit projekt evalueres)
-
-Du kan vise kode i markdown på følgende måder: 
 ```js
 const [archivedData, setArchivedData] = useState(JSON.parse(localStorage.getItem(`${category}ArchivedData`)) || [])
 localStorage.setItem(`${category}ArchivedData`, JSON.stringify(archivedData))
 const handleSaveClick = (elm) => {
     setArchivedData(currentContent => currentContent.some(item => item.url === elm.url) ? currentContent : [...currentContent, elm])
 }
-/*category er det navn man vælger at skrive i function({ category }) i filen det henter componenten ind*/
+/*Category er det navn man vælger at skrive i function({ category }) i filen det henter componenten ind*/
+/*Laver en localstorage med en array af content fra category og tjekker hvis det en noget data som er ens for ikke at for de samme nyheder flere steder*/
 ```
 
 ```css
@@ -79,5 +79,7 @@ const handleSaveClick = (elm) => {
 
         &:active
             filter: brightness(130%)
+
+/*Sass'en for at lave nyhederne som man kan swipe til venstre of få save/slet knappen frem*/
 ```
 
