@@ -1,0 +1,37 @@
+@use "variables" as var
+
+.news-section, .archive-section, .popular-section
+    display: flex
+    flex-direction: column
+    border-bottom: 2px solid var.$dark-border
+    margin-bottom: 5em
+    
+.settings-section
+
+    &__h2
+        text-align: center
+        color: var.$newsify-green
+        font-size: 2em
+        font-family: var.$text-font
+        margin-top: 0
+        margin-bottom: 2.5vh
+
+    &__h3
+        text-align: center
+        font-size: 1.3em
+        font-family: var.$text-font
+        font-weight: 500
+        margin-top: 0
+        margin-bottom: 4.8vh
+
+    &__darkmode
+        width: calc( 100% - 2em )
+        border: 1px solid var.$newsify-green
+        background-color: transparent 
+        border-radius: 35px
+        padding: .7em 0
+        font-size: 1.5em
+        color: var.$newsify-green
+        margin: 0 1em
+        margin-bottom: 5em
+        font-weight: 500
