@@ -1,0 +1,456 @@
+@use "variables" as var
+
+/* #region Startup logo */
+.startup-logo-section
+    width: 100%
+    min-height: 100dvh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-color: light-dark(white, var.$dark-mode-bg-color)
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 3
+
+    &__img
+        width: 5em
+        margin: 0 auto
+        margin-bottom: 2em
+
+    &__h1
+        margin: 0 auto
+        text-align: center
+        opacity: 0
+        font-size: 3em
+        font-weight: 800
+/* #endregion */
+
+/* #region Tutorial */
+.tutorial-section
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    width: 100%
+    min-height: 100dvh
+    background-color: light-dark(white, var.$dark-mode-bg-color)
+
+.slider
+    width: 100%
+    margin-top: 3vh
+
+    &__figure
+        margin: 0
+        flex-direction: column
+
+        &--block
+            display: flex
+        &--none
+            display: none
+
+    &__img
+        width: 100%
+        aspect-ratio: 1/1.05
+        margin-bottom: .8em
+
+    &__figcaption
+        text-align: center
+        padding: 0 2em
+        margin-bottom: 5.5vh
+
+        h2
+            font-size: 2.2em
+            font-weight: 800
+            margin-top: 0
+            margin-bottom: .5em
+
+        p
+            font-size: 1.2em
+            margin: 0
+
+.slider-dots
+    display: flex
+    justify-content: center
+    margin-bottom: 5.5vh
+
+    &__span
+        width: 14px
+        height: 14px
+        background-color: light-dark(#00000047, #ffffffcc)
+        border-radius: 50%
+        margin: 0 5px
+
+    &__slider-page
+        width: 0
+        height: 0
+
+        div
+            position: relative
+            width: 120px
+            height: 14px
+            right: 120px
+            display: flex
+
+            span
+                width: 62px
+                height: 14px
+                background-color: var.$newsify-green
+                border-radius: 10px
+                margin: 0 5px
+
+.slider-btns
+    text-align: center
+    display: flex
+    justify-content: space-between
+    padding: 0 1em
+
+    button
+        font-weight: 500
+        font-size: 1em
+        width: 45%
+        margin-bottom: 1em
+
+        &:active
+            filter: brightness(130%)
+
+    &__skip
+        border: 1.5px solid var.$newsify-green
+        border-radius: 30px
+        background-color: transparent
+        color: var.$newsify-green
+        padding: 1em 0
+
+    &__continue
+        border: none
+        border-radius: 30px
+        background-color: var.$newsify-green
+        color: white
+        padding: 1em 0
+
+/* #endregion */
+
+/* #region Login */
+.login-section
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    width: 100%
+    min-height: 100dvh
+    background-color: light-dark(white, var.$dark-mode-bg-color)
+    text-align: center
+
+    &__p
+        font-size: 1.1em
+        margin-top: 0
+        margin-bottom: 6vh
+        padding: 0 10px
+
+    &__sign-in
+        padding: 1.2em 0
+        font-weight: 500
+        background-color: var.$newsify-green
+        border: none
+        border-radius: 30px
+        font-size: 1em
+        width: 85%
+        color: white
+        margin-bottom: 2em
+        &:active
+            filter: brightness(130%)
+
+.login-logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 7vh 0 5.5vh 0
+
+    &__img
+        width: 20%
+
+    &__h3
+        font-weight: 900
+        font-size: 2.2em
+        margin-top: 10px
+        margin-bottom: 0
+
+.login-btns
+    display: flex
+    flex-direction: column
+    padding: 0 30px
+    margin-bottom: 5.5vh
+
+    button
+        padding: 1.2em 0
+        font-weight: 500
+        background-color: transparent
+        border: 1px solid var.$dark-border
+        border-radius: 30px
+        font-size: 1em
+
+    &__facebook
+        margin-bottom: 15px
+
+.or-separator
+    display: flex
+    padding: 0 20px
+    align-items: center
+    margin-bottom: 5.5vh
+
+    &__line
+        width: 40%
+        height: 2px
+        background-color: var.$dark-border
+
+    &__p
+        width: 20%
+
+.sign-up
+    display: flex
+    justify-content: center
+    margin-bottom: 1.5em
+
+    &__p
+        margin: 0
+        margin-right: 10px
+
+    &__btn
+        background-color: transparent
+        border: none
+        font-size: 1em
+        color: var.$newsify-green
+        padding: 0
+/* #endregion */
+
+/* #region Header */
+.header-section
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 1.5em
+    margin-bottom: 3.5vh
+
+    &__img
+        width: 20px
+        margin-right: 10px
+
+    &__h1
+        margin: 0
+        font-size: 1.5em
+        font-weight: 900
+
+.nyt-logo
+    position: absolute
+    top: 25px
+    left: 0
+/* #endregion */
+
+/* #region Searchbar */
+.searchbar
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 1.5em
+
+    &__input
+        width: 80%
+        font-size: 1em
+        padding: 1em
+        border: none
+        background-color: #eaeaea
+        border-radius: 5px
+        color: #444444
+
+        &::placeholder
+            color: #444444
+
+        &:focus
+            outline-color: light-dark(black, white)
+
+.search-display
+    position: relative
+    width: 100%
+    padding: 0
+    overflow: hidden
+    height: 0
+/* #endregion */
+
+/* #region News */
+.news-section__btn, .popular-section__btn, .archive-section__btn
+    width: 100%
+    background-color: transparent
+    display: flex
+    border: none
+    border-top: 2px solid var.$dark-border
+    padding: 1em 2em
+
+    img
+        width: 20px
+        margin-right: 10px
+
+    h2
+        font-size: 1.4em
+        font-weight: 800
+        margin: 0
+        text-transform: uppercase
+        width: 100%
+        text-align: start
+
+    div
+        width: 5%
+        font-size: 3em
+        margin: 0
+        line-height: 20px
+
+.news-display, .search-display
+    padding: 0
+    overflow: hidden
+    height: 0
+    margin: 0
+    list-style: none
+
+.news-box-section
+    display: flex
+    overflow: scroll
+    white-space: nowrap
+    scroll-snap-type: x mandatory
+    border-bottom: 1px solid var.$dark-border
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+    &:first-child
+        border-top: 1px solid var.$dark-border
+
+    &:last-child
+        border-bottom: none
+
+    &__btn
+        border: none
+        font-size: 2em
+        padding: 0 1.2em
+        color: white
+        scroll-snap-stop: always
+        scroll-snap-align: end
+
+        &:active
+            filter: brightness(130%)
+    
+    &::-webkit-scrollbar 
+        display: none
+
+
+.news-box, .popular-news-box, .search-news-box
+    display: flex
+    width: 100vw
+    padding: 1em 1.3em 1em 1.3em
+    text-decoration: none
+    color: light-dark(black, white)
+    scroll-snap-stop: always
+    scroll-snap-align: start
+
+    &__img
+        width: 5.3em
+        border-radius: 7px
+        margin-right: 20px
+        aspect-ratio: 1/1
+
+    &__article
+        width: calc( 100vw - 145px )
+        display: flex
+        flex-direction: column
+        justify-content: center
+        text-wrap: wrap
+
+        h3
+            margin-top: 0
+            margin-bottom: 3px
+            font-size: 4.4vw
+
+        p
+            margin: 0
+            font-size: 3.4vw
+            font-weight: 300
+
+.popular-news-box, .search-news-box
+    border-bottom: 1px solid var.$dark-border
+
+    &:first-child
+        border-top: 1px solid var.$dark-border
+
+    &:last-child
+        border-bottom: none
+/* #endregion */
+
+/* #region settings */
+.settings-category
+    display: flex
+    padding: 1.2em 1.5em
+    border-top: 1px solid var.$dark-border
+    align-items: center
+
+    &:last-of-type
+        border-bottom: 1px solid var.$dark-border
+        margin-bottom: 2em
+
+    &__img
+        width: 20px
+        margin-right: 10px
+
+    &__h4
+        font-size: 1.1em
+        font-weight: 800
+        margin: 0
+        text-transform: uppercase
+        width: 100%
+        text-align: start
+
+.Setting-toggle
+    width: 80px
+    background-color: var.$newsify-green
+    border: none
+    padding: 2px
+    border-radius: 20px
+    display: flex
+
+    &__div
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background-color: white
+/* #endregion */
+
+/* #region Nav */
+.nav-section
+    width: 100%
+    position: fixed
+    bottom: 0
+    background-color: light-dark(white, var.$dark-mode-bg-color)
+    z-index: 2
+    box-shadow: 0 0 10px 5px #00000032
+    padding: 1em 0 1.5em 0
+
+.nav-ul
+    display: flex
+    justify-content: space-around
+    padding: 0
+    margin: 0
+    list-style: none
+
+    &__li
+        a
+            text-decoration: none
+            text-align: center
+            display: flex
+            flex-direction: column
+            align-items: center
+            color: light-dark(black, white)
+
+            svg
+                font-size: 1.5em
+
+            p
+                margin: 0
+                font-size: 0.8em
+/* #endregion */
